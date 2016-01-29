@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace EFPT.Lib
 {
-    public class Class1
+    public class Istemci : IDisposable
     {
+        public void Dispose()
+        {
+        }
     }
 }
