@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EFPT.App")]
+[assembly: AssemblyTitle("EFPT.Lib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EFPT.App")]
+[assembly: AssemblyProduct("EFPT.Lib")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fd8aa63a-2f3d-4992-8a81-9c9eeaef4602")]
+[assembly: Guid("9f51dc72-a8fe-4743-8b67-80fca48fcaee")]
 
 // Version information for an assembly consists of the following four values:
 //
