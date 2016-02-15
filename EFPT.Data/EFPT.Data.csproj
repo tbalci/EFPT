@@ -66,7 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDatabaseEngine.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\MYSQLConfiguration.cs" />
+    <Compile Include="Migrations\MSSQLConfiguration.cs" />
     <Compile Include="MYSQLEntities.cs" />
     <Compile Include="MSSQLEntities.cs" />
     <Compile Include="MYSQLSeedData.cs" />
