@@ -16,6 +16,7 @@ namespace EFPT.Model
 
         [MaxLength(50)]
         public string Mail { get; set; }
-
+        [MaxLength(50)]
+        public string Mail1 { get; set; }
     }
 }

@@ -124,7 +124,6 @@
             // 
             // TpPGiris
             // 
-            this.TpPGiris.CanClose = false;
             this.TpPGiris.IsDrawn = true;
             this.TpPGiris.Name = "TpPGiris";
             this.TpPGiris.Selected = true;

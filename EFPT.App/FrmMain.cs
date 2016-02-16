@@ -31,9 +31,8 @@ namespace EFPT.App
 
         private void FrmMain_ResizeEnd(object sender, EventArgs e)
         {
-           
-        }
 
+        }
         public void FormEkle(Form Form)
         {
             FarsiLibrary.Win.FATabStripItem Tp = new FarsiLibrary.Win.FATabStripItem();
@@ -43,11 +42,12 @@ namespace EFPT.App
             Form.FormBorderStyle = FormBorderStyle.None;
             Form.Dock = DockStyle.Fill;
             Tp.Controls.Add(Form);
-            Tp.CanClose = false;
+            //Tp.CanClose = false;
             Tp.Image = Form.Icon.ToBitmap();
             TpcIslem.AddTab(Tp,true);
             DurumBilgisiVer(string.Format("{0} Ekranı Oluşturuldu",Form.Text));
         }
+
         private void TlstrpBtnYeniPerformansTest_Click(object sender, EventArgs e)
         {
             FrmSihirbaz YeniSihirbaz = new FrmSihirbaz();
@@ -63,7 +63,6 @@ namespace EFPT.App
                 FrmPerFormansTest.Text = YeniSihirbaz.TxtTestAd.Text.Trim()==""?"Yeni Performans Testi": YeniSihirbaz.TxtTestAd.Text.Trim();
                 FrmPerFormansTest.TestBilgileri = new PeromasnTestBilgi() { VeriTabaniTipi = YeniSihirbaz.VeriTabaniTipi, UserListesi = YeniSihirbaz.Userlistesi };
                 FrmMain.AktifMainForm.FormEkle(FrmPerFormansTest);
-
             }
             else
             {
