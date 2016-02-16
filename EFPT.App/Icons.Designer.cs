@@ -73,6 +73,16 @@ namespace EFPT.App {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Kaydet {
+            get {
+                object obj = ResourceManager.GetObject("Kaydet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mssql {
             get {
                 object obj = ResourceManager.GetObject("Mssql", resourceCulture);
@@ -96,6 +106,16 @@ namespace EFPT.App {
         internal static System.Drawing.Bitmap Oracle {
             get {
                 object obj = ResourceManager.GetObject("Oracle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Temizle {
+            get {
+                object obj = ResourceManager.GetObject("Temizle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

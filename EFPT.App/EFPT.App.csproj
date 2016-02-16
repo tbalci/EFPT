@@ -63,6 +63,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -88,6 +89,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPerFormansTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerFormansTest.Designer.cs">
+      <DependentUpon>FrmPerFormansTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSihirbaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Icons.resx</DependentUpon>
     </Compile>
+    <Compile Include="PeromasnTestBilgi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmIslem.resx">
@@ -112,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerFormansTest.resx">
+      <DependentUpon>FrmPerFormansTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSihirbaz.resx">
       <DependentUpon>FrmSihirbaz.cs</DependentUpon>
@@ -132,6 +143,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -144,7 +156,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EFPT.Data\EFPT.Data.csproj">
@@ -159,11 +173,17 @@
       <Project>{b633d96b-afd9-4ae3-a20e-bd82e152533d}</Project>
       <Name>EFPT.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TabStrip\TabStrip.csproj">
+      <Project>{F929CA6A-87BD-42C8-8D0A-6455DB6F55DC}</Project>
+      <Name>TabStrip</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="EFTP.ico" />
     <Content Include="Kaynak\EFTP.ico" />
     <Content Include="Kaynak\EFTP.png" />
+    <None Include="Resources\Temizle.png" />
+    <None Include="Resources\Kaydet.png" />
     <None Include="Resources\Mysql.png" />
     <None Include="Resources\Oracle.png" />
     <None Include="Resources\Mssql.png" />

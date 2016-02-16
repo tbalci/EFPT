@@ -50,6 +50,7 @@ namespace EFPT.App
         public FrmSihirbaz()
         {
             InitializeComponent();
+            this.Icon = FrmMain.AktifMainForm.Icon;
             this.Userlistesi = new List<User>();
         }
 
@@ -105,8 +106,29 @@ namespace EFPT.App
             YeniVeriler.MaximizeBox = false;
             YeniVeriler.MinimizeBox = false;
             YeniVeriler.Userlistesi = this.Userlistesi;
+
             DialogResult Sonuc = YeniVeriler.ShowDialog();
 
+        }
+
+        private void btnTestiBaslat_Click(object sender, EventArgs e)
+        {
+            if (TxtTestAd.Text.Trim() != "")
+            {
+                if (Userlistesi.Count()>0)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    TlStrpDurum.Text = "Veriler Oluşturulmamış. Lütfen Verileri Oluşturunuz..!";
+                }
+            }
+            else
+            {
+                TlStrpDurum.Text = "Test Adı Boş Olamaz.! Lütfen Test adı Giriniz.";
+            }
         }
     }
 }

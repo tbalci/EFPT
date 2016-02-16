@@ -35,13 +35,16 @@
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StrpStatus = new System.Windows.Forms.StatusStrip();
             this.TlStrpDurum = new System.Windows.Forms.ToolStripStatusLabel();
-            this.TlStrpVersiyon = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.TpIslem = new System.Windows.Forms.TabControl();
-            this.TpGiris = new System.Windows.Forms.TabPage();
+            this.TlStrpVersiyon = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TpcIslem = new FarsiLibrary.Win.FATabStrip();
+            this.TpPGiris = new FarsiLibrary.Win.FATabStripItem();
+            this.faTabStripItem2 = new FarsiLibrary.Win.FATabStripItem();
+            this.faTabStripItem3 = new FarsiLibrary.Win.FATabStripItem();
             this.UstMenu.SuspendLayout();
             this.StrpStatus.SuspendLayout();
-            this.TpIslem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TpcIslem)).BeginInit();
+            this.TpcIslem.SuspendLayout();
             this.SuspendLayout();
             // 
             // UstMenu
@@ -94,6 +97,12 @@
             this.TlStrpDurum.Name = "TlStrpDurum";
             this.TlStrpDurum.Size = new System.Drawing.Size(16, 17);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1037, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            // 
             // TlStrpVersiyon
             // 
             this.TlStrpVersiyon.Image = global::EFPT.App.Icons.Versiyon;
@@ -101,38 +110,51 @@
             this.TlStrpVersiyon.Size = new System.Drawing.Size(79, 17);
             this.TlStrpVersiyon.Text = "Ver. 1.0.0.0";
             // 
-            // toolStripStatusLabel1
+            // TpcIslem
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1037, 17);
-            this.toolStripStatusLabel1.Spring = true;
+            this.TpcIslem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TpcIslem.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.TpcIslem.Items.AddRange(new FarsiLibrary.Win.FATabStripItem[] {
+            this.TpPGiris});
+            this.TpcIslem.Location = new System.Drawing.Point(0, 24);
+            this.TpcIslem.Name = "TpcIslem";
+            this.TpcIslem.SelectedItem = this.TpPGiris;
+            this.TpcIslem.Size = new System.Drawing.Size(1147, 669);
+            this.TpcIslem.TabIndex = 2;
             // 
-            // TpIslem
+            // TpPGiris
             // 
-            this.TpIslem.Controls.Add(this.TpGiris);
-            this.TpIslem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TpIslem.Location = new System.Drawing.Point(0, 24);
-            this.TpIslem.Name = "TpIslem";
-            this.TpIslem.SelectedIndex = 0;
-            this.TpIslem.Size = new System.Drawing.Size(1147, 669);
-            this.TpIslem.TabIndex = 3;
+            this.TpPGiris.CanClose = false;
+            this.TpPGiris.IsDrawn = true;
+            this.TpPGiris.Name = "TpPGiris";
+            this.TpPGiris.Selected = true;
+            this.TpPGiris.Size = new System.Drawing.Size(1145, 648);
+            this.TpPGiris.TabIndex = 0;
+            this.TpPGiris.Title = "Giriş";
             // 
-            // TpGiris
+            // faTabStripItem2
             // 
-            this.TpGiris.Location = new System.Drawing.Point(4, 22);
-            this.TpGiris.Name = "TpGiris";
-            this.TpGiris.Padding = new System.Windows.Forms.Padding(3);
-            this.TpGiris.Size = new System.Drawing.Size(1139, 643);
-            this.TpGiris.TabIndex = 0;
-            this.TpGiris.Text = "Giriş";
-            this.TpGiris.UseVisualStyleBackColor = true;
+            this.faTabStripItem2.IsDrawn = true;
+            this.faTabStripItem2.Name = "faTabStripItem2";
+            this.faTabStripItem2.Selected = true;
+            this.faTabStripItem2.Size = new System.Drawing.Size(1145, 648);
+            this.faTabStripItem2.TabIndex = 1;
+            this.faTabStripItem2.Title = "TabStrip Page 2";
+            // 
+            // faTabStripItem3
+            // 
+            this.faTabStripItem3.IsDrawn = true;
+            this.faTabStripItem3.Name = "faTabStripItem3";
+            this.faTabStripItem3.Size = new System.Drawing.Size(1145, 648);
+            this.faTabStripItem3.TabIndex = 2;
+            this.faTabStripItem3.Title = "TabStrip Page 3";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 715);
-            this.Controls.Add(this.TpIslem);
+            this.Controls.Add(this.TpcIslem);
             this.Controls.Add(this.StrpStatus);
             this.Controls.Add(this.UstMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -147,7 +169,8 @@
             this.UstMenu.PerformLayout();
             this.StrpStatus.ResumeLayout(false);
             this.StrpStatus.PerformLayout();
-            this.TpIslem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TpcIslem)).EndInit();
+            this.TpcIslem.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,8 +186,10 @@
         private System.Windows.Forms.ToolStripStatusLabel TlStrpDurum;
         private System.Windows.Forms.ToolStripStatusLabel TlStrpVersiyon;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.TabControl TpIslem;
-        private System.Windows.Forms.TabPage TpGiris;
+        private FarsiLibrary.Win.FATabStrip TpcIslem;
+        private FarsiLibrary.Win.FATabStripItem TpPGiris;
+        private FarsiLibrary.Win.FATabStripItem faTabStripItem2;
+        private FarsiLibrary.Win.FATabStripItem faTabStripItem3;
     }
 }
 

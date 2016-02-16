@@ -18,11 +18,20 @@ namespace EFPT.App
         public FrmVeriler()
         {
             InitializeComponent();
+            this.Icon = FrmMain.AktifMainForm.Icon;
         }
 
         private void FrmVeriler_Load(object sender, EventArgs e)
         {
-            GrdVeri.DataSource = Userlistesi;
+            var result = Userlistesi
+            .Select((user, index) => new   // project in the index
+            {
+                Sıra = index+1,
+                Adı_Soyadı = string.Format("{0} {1}",user.Ad,user.Soyad),
+                Mail = user.Mail,
+                Tarih = user.Tarih
+            });
+            GrdVeri.DataSource = result.ToList();
         }
     }
 }
