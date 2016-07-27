@@ -41,10 +41,12 @@
             this.TpPGiris = new FarsiLibrary.Win.FATabStripItem();
             this.faTabStripItem2 = new FarsiLibrary.Win.FATabStripItem();
             this.faTabStripItem3 = new FarsiLibrary.Win.FATabStripItem();
+            this.btnKayitEklemeTestFormuAc = new System.Windows.Forms.Button();
             this.UstMenu.SuspendLayout();
             this.StrpStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TpcIslem)).BeginInit();
             this.TpcIslem.SuspendLayout();
+            this.TpPGiris.SuspendLayout();
             this.SuspendLayout();
             // 
             // UstMenu
@@ -69,8 +71,8 @@
             // TlstrpBtnYeniPerformansTest
             // 
             this.TlstrpBtnYeniPerformansTest.Name = "TlstrpBtnYeniPerformansTest";
-            this.TlstrpBtnYeniPerformansTest.Size = new System.Drawing.Size(189, 22);
-            this.TlstrpBtnYeniPerformansTest.Text = "Yeni Performans Testi";
+            this.TlstrpBtnYeniPerformansTest.Size = new System.Drawing.Size(169, 22);
+            this.TlstrpBtnYeniPerformansTest.Text = "Kayıt Ekleme Testi";
             this.TlstrpBtnYeniPerformansTest.Click += new System.EventHandler(this.TlstrpBtnYeniPerformansTest_Click);
             // 
             // çıkışToolStripMenuItem
@@ -124,6 +126,7 @@
             // 
             // TpPGiris
             // 
+            this.TpPGiris.Controls.Add(this.btnKayitEklemeTestFormuAc);
             this.TpPGiris.IsDrawn = true;
             this.TpPGiris.Name = "TpPGiris";
             this.TpPGiris.Selected = true;
@@ -148,6 +151,16 @@
             this.faTabStripItem3.TabIndex = 2;
             this.faTabStripItem3.Title = "TabStrip Page 3";
             // 
+            // btnKayitEklemeTestFormuAc
+            // 
+            this.btnKayitEklemeTestFormuAc.Location = new System.Drawing.Point(12, 25);
+            this.btnKayitEklemeTestFormuAc.Name = "btnKayitEklemeTestFormuAc";
+            this.btnKayitEklemeTestFormuAc.Size = new System.Drawing.Size(151, 42);
+            this.btnKayitEklemeTestFormuAc.TabIndex = 0;
+            this.btnKayitEklemeTestFormuAc.Text = "Kayıt Ekleme Testi";
+            this.btnKayitEklemeTestFormuAc.UseVisualStyleBackColor = true;
+            this.btnKayitEklemeTestFormuAc.Click += new System.EventHandler(this.btnKayitEklemeTestFormuAc_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entity Framework Performans Aracı";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ResizeEnd += new System.EventHandler(this.FrmMain_ResizeEnd);
             this.UstMenu.ResumeLayout(false);
@@ -170,6 +184,7 @@
             this.StrpStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TpcIslem)).EndInit();
             this.TpcIslem.ResumeLayout(false);
+            this.TpPGiris.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +204,7 @@
         private FarsiLibrary.Win.FATabStripItem TpPGiris;
         private FarsiLibrary.Win.FATabStripItem faTabStripItem2;
         private FarsiLibrary.Win.FATabStripItem faTabStripItem3;
+        private System.Windows.Forms.Button btnKayitEklemeTestFormuAc;
     }
 }
 

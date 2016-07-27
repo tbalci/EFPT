@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EFPT.Mssql
 {
@@ -15,17 +16,27 @@ namespace EFPT.Mssql
 
         public void Dispose()
         {
-             
-        }
 
-        public void Ekle()
+        }
+        public void Ekle(List<EFPT.Model.User> UserListesi)
         {
-           
+            if (UserListesi!=null)
+            {
+                using (EFPT.Data.MSSQLEntities VeriTabani = new Data.MSSQLEntities())
+                {
+                    for (int Don = 0; Don < UserListesi.Count; Don++)
+                    {
+                        VeriTabani.UserListesi.Add(UserListesi[Don]);
+                        Application.DoEvents();
+                        VeriTabani.SaveChanges();
+                    }
+                }
+            }
+            
         }
-
         public void Sil()
         {
-            
+              
         }
     }
 }

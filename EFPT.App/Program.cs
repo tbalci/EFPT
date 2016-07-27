@@ -17,9 +17,7 @@ namespace EFPT.App
         {
             // Init Database
             System.Data.Entity.Database.SetInitializer(new MSSQLSeedData());
-
             System.Data.Entity.Database.SetInitializer(new MYSQLSeedData());
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());

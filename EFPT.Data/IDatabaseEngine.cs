@@ -8,7 +8,7 @@ namespace EFPT.Data
 {
    public interface IDatabaseEngine:IDisposable
     {
-        void Ekle();
+        void Ekle(List<EFPT.Model.User> UserListesi);
         void Sil();
         void Ara(int Id);
     }

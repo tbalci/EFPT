@@ -4,7 +4,7 @@ using System.Data.Entity;
 
 namespace EFPT.Data
 {
-    public class MSSQLSeedData : DropCreateDatabaseAlways<MSSQLEntities>
+    public class MSSQLSeedData : DropCreateDatabaseIfModelChanges<MSSQLEntities>
     {
         protected override void Seed(MSSQLEntities context)
         {

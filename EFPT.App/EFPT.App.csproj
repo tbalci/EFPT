@@ -44,6 +44,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
@@ -60,12 +68,41 @@
       <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.2400\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RazorEngine, Version=3.7.7.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.7.7\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +114,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RaporBilgi.cs" />
+    <Compile Include="RaporBilgiRazorTemplate.cs" />
     <Compile Include="FrmIslem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,17 +128,17 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPerFormansTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPerFormansTest.Designer.cs">
-      <DependentUpon>FrmPerFormansTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSihirbaz.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSihirbaz.Designer.cs">
       <DependentUpon>FrmSihirbaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSonuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSonuc.Designer.cs">
+      <DependentUpon>FrmSonuc.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVeriler.cs">
       <SubType>Form</SubType>
@@ -115,17 +154,29 @@
     <Compile Include="PeromasnTestBilgi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testler\FrmRaporTestKayitEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testler\FrmRaporTestKayitEkleme.Designer.cs">
+      <DependentUpon>FrmRaporTestKayitEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testler\FrmTestKayitEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testler\FrmTestKayitEkleme.Designer.cs">
+      <DependentUpon>FrmTestKayitEkleme.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmIslem.resx">
       <DependentUpon>FrmIslem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPerFormansTest.resx">
-      <DependentUpon>FrmPerFormansTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmSihirbaz.resx">
       <DependentUpon>FrmSihirbaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSonuc.resx">
+      <DependentUpon>FrmSonuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVeriler.resx">
       <DependentUpon>FrmVeriler.cs</DependentUpon>
@@ -143,6 +194,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Testler\FrmRaporTestKayitEkleme.resx">
+      <DependentUpon>FrmRaporTestKayitEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testler\FrmTestKayitEkleme.resx">
+      <DependentUpon>FrmTestKayitEkleme.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -154,6 +211,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Templates\KayitEklemeRaporu.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -173,6 +233,26 @@
       <Project>{b633d96b-afd9-4ae3-a20e-bd82e152533d}</Project>
       <Name>EFPT.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EFPT.Mssql\EFPT.Mssql.csproj">
+      <Project>{3462dfb1-8add-47f7-8e58-2099d9e4fc2f}</Project>
+      <Name>EFPT.Mssql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EFPT.Mysql\EFPT.Mysql.csproj">
+      <Project>{3cbdf1f6-26dc-4041-9392-df1a93eb6ae2}</Project>
+      <Name>EFPT.Mysql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EFPT.Performans\EFPT.Performans.csproj">
+      <Project>{f7f59141-5c02-4f7b-b1b0-678f0ffe45cb}</Project>
+      <Name>EFPT.Performans</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EFPT.Remote\EFPT.Remote.csproj">
+      <Project>{9a2efca1-6b14-485f-9f66-8f4c5adba9a5}</Project>
+      <Name>EFPT.Remote</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazorHosting\RazorHosting.csproj">
+      <Project>{13db1cab-c0b7-4b58-9780-42cf51067e67}</Project>
+      <Name>RazorHosting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TabStrip\TabStrip.csproj">
       <Project>{F929CA6A-87BD-42C8-8D0A-6455DB6F55DC}</Project>
       <Name>TabStrip</Name>
@@ -182,6 +262,868 @@
     <Content Include="EFTP.ico" />
     <Content Include="Kaynak\EFTP.ico" />
     <Content Include="Kaynak\EFTP.png" />
+    <Content Include="Templates\Lib\amcharts\amcharts.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\funnel.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\gantt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\gauge.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIcon.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconBlack.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconH.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconHBlack.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBig.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBig.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBigBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBigBlack.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBigBlackH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBigBlackH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBigH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectBigH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmall.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmallBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmallBlack.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmallBlackH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmallBlackH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmallH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRectSmallH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBig.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBig.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBigBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBigBlack.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBigBlackH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBigBlackH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBigH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundBigH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmall.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmallBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmallBlack.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmallBlackH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmallBlackH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmallH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\dragIconRoundSmallH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\eraserIcon.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\eraserIconH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\export.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\exportWhite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\lens.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\lens.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\lensWhite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\lensWhite.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\lensWhite_old.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\lens_old.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\pencilIcon.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\pencilIconH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\xIcon.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\images\xIconH.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\az.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\bg.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\de.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\es.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\fi.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\fo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\fr.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\hr.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\hu.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\id.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\is.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\it.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\ja.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\lt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\lv.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\mk.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\mn.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\mt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\nl.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\no.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\pl.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\pt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\ro.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\ru.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\rw.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\sk.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\so.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\th.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\tr.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\lang\zh.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\black\pattern9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\chalk\pattern1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\chalk\pattern1r.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\chalk\pattern2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\chalk\pattern3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\chalk\pattern4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\chalk\pattern5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\chalk\pattern6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\patterns\white\pattern9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\pie.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\dataloader.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\dataloader.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\gantt_json.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\gauge_json.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\map_json.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\map_json_external_function.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\pie_csv.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\pie_json.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\serial2_json.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\serial_csv.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\serial_json.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\serial_with_dynamic_graphs.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\stock_csv_data_and_events.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\examples\stock_csv_progressbar.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\lang\en.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\lang\fr.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\lang\lt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\dataloader\license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\export.config.advanced.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\export.config.default.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\funnel.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\gantt.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\gauge.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\images\bicycle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\images\car.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\images\motorcycle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\map.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\pie1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\pie2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\pie3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\pie4.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\radar.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\serial1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\serial2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\serial3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\stock.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\examples\xy.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\export.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\export.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\export.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\lang\de.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\lang\en.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\lang\fr.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\lang\lt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\lang\pl.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\lang\pt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\blob.js\blob.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\fabric.js\fabric.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\fabric.js\fabric.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\FileSaver.js\FileSaver.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\FileSaver.js\FileSaver.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\jszip\jszip.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\jszip\jszip.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\pdfmake\pdfmake.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\pdfmake\pdfmake.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\pdfmake\vfs_fonts.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\xlsx\xlsx.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\libs\xlsx\xlsx.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\1.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\10.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\11.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\12.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\13.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\14.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\15.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\16.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\17.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\18.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\19.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\2.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\20.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\21.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\22.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\23.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\24.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\25.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\26.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\27.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\28.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\29.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\3.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\30.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\31.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\4.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\5.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\6.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\7.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\8.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\export\shapes\9.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\funnel.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\gantt.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\gauge.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\images\bicycle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\images\car.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\images\motorcycle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\map.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\pie1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\pie2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\pie3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\radar.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\serial1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\serial2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\serial3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\stock.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\examples\xy.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\responsive.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\plugins\responsive\responsive.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\radar.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\serial.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\themes\black.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\themes\chalk.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\themes\dark.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\themes\light.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\themes\patterns.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\amcharts\xy.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Templates\Lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Templates\Lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\Lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Templates\Lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Templates\Lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Templates\Lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Templates\Lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Lib\js\jquery-1.10.2.min.js" />
+    <Content Include="Templates\__Preview.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\gantt.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\gauge.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\map.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\map_areas.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\MSFT.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\MSFT_events.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\pie.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\pie.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\serial.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\serial.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\serial2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\examples\data\TXN.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\dataloader\readme.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\export\libs\pdfmake\pdfmake.min.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\export\libs\xlsx\LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\export\libs\xlsx\xlsx.min.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\export\LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\export\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\responsive\readme.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Lib\amcharts\plugins\responsive\responsive.min.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Templates\Lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\Lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\Lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\Lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Templates\Lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Templates\Lib\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Templates\Lib\font-awesome\less\core.less" />
+    <Content Include="Templates\Lib\font-awesome\less\fixed-width.less" />
+    <Content Include="Templates\Lib\font-awesome\less\font-awesome.less" />
+    <Content Include="Templates\Lib\font-awesome\less\icons.less" />
+    <Content Include="Templates\Lib\font-awesome\less\larger.less" />
+    <Content Include="Templates\Lib\font-awesome\less\list.less" />
+    <Content Include="Templates\Lib\font-awesome\less\mixins.less" />
+    <Content Include="Templates\Lib\font-awesome\less\path.less" />
+    <Content Include="Templates\Lib\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Templates\Lib\font-awesome\less\spinning.less" />
+    <Content Include="Templates\Lib\font-awesome\less\stacked.less" />
+    <Content Include="Templates\Lib\font-awesome\less\variables.less" />
+    <Content Include="Templates\Lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_core.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_icons.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_larger.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_list.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_path.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_spinning.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="Templates\Lib\font-awesome\scss\_variables.scss" />
     <None Include="Resources\Temizle.png" />
     <None Include="Resources\Kaydet.png" />
     <None Include="Resources\Mysql.png" />
@@ -190,7 +1132,14 @@
     <None Include="Resources\Versiyon.png" />
     <None Include="Resources\DurumBilgi.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControl\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

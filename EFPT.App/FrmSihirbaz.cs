@@ -100,16 +100,9 @@ namespace EFPT.App
         private void btnGoruntule_Click(object sender, EventArgs e)
         {
             FrmVeriler YeniVeriler = new FrmVeriler();
-            YeniVeriler.Text = "Dumy Veriler";
-            YeniVeriler.WindowState = FormWindowState.Normal;
-            YeniVeriler.StartPosition = FormStartPosition.CenterParent;
-            YeniVeriler.MaximizeBox = false;
-            YeniVeriler.MinimizeBox = false;
-            YeniVeriler.Userlistesi = this.Userlistesi;
-
-            DialogResult Sonuc = YeniVeriler.ShowDialog();
-
-        }
+            YeniVeriler.UserListesi = this.Userlistesi;
+            YeniVeriler.ShowDialog();
+       }
 
         private void btnTestiBaslat_Click(object sender, EventArgs e)
         {
