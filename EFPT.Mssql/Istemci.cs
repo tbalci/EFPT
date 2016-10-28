@@ -27,8 +27,8 @@ namespace EFPT.Mssql
                     for (int Don = 0; Don < UserListesi.Count; Don++)
                     {
                         VeriTabani.UserListesi.Add(UserListesi[Don]);
-                        Application.DoEvents();
                         VeriTabani.SaveChanges();
+                        Application.DoEvents();
                     }
                 }
             }

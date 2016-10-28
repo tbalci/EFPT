@@ -13,10 +13,7 @@ namespace EFPT.Performans
         public DateTime Tarih { get; set; }
         public double AppCpu { get; set; }
         public double AppRam { get; set; }
-
         public double EngineCpu { get; set; }
         public double EngineRam { get; set; }
-
-
     }
 }

@@ -108,6 +108,7 @@ namespace EFPT.App.Testler
                         break;
                     }
                 case Lib.VeriTabaniTipi.Mysql:
+                    Istemci = new EFPT.Mysql.Istemci();
                     break;
                 case Lib.VeriTabaniTipi.Oracle:
                     break;
@@ -185,6 +186,8 @@ namespace EFPT.App.Testler
                 file.Close();
             }
         }
+
+
         private void btnSonucGoster_Click(object sender, EventArgs e)
         {
 
@@ -193,6 +196,7 @@ namespace EFPT.App.Testler
             YeniRapor.Context.Ad = tester.Ad;
             YeniRapor.Context.Aciklama = tester.Aciklama;
             YeniRapor.Context.SonucListesi = tester.SonucListesi;
+            YeniRapor.Context.GrafikData = tester.SonucListesi.ToJson();// FrmMain.AktifMainForm.AlinanSonuclar.Replace("\0","");
             YeniRapor.Text = string.Format("{0} Raporu", tester.Ad);
             FrmMain.AktifMainForm.FormEkle(YeniRapor);
         }

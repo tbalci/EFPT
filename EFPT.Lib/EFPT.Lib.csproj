@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityExtentions.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="Istemci.cs" />
     <Compile Include="Json.cs" />
