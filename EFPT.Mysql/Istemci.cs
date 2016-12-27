@@ -16,7 +16,7 @@ namespace EFPT.Mysql
         }
 
         public void Dispose()
-        {
+        { 
             
         }
 
