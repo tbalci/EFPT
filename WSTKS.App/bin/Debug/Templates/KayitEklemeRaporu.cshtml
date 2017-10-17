@@ -1,0 +1,398 @@
+﻿@using System.Reflection
+@using WSKTS.App
+@using WSKTS.Performans
+@using WSKTS
+@{
+    RaporBilgi Model = Context as RaporBilgi;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rapor Sistemi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css" />
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>@Model.Ad<span> | </span><span>@Model.Aciklama</span></h3>
+                        @*<a class="btn btn-danger pull-right" style="margin-top:-50px" href="#" onclick="window.print(); return false;">Print</a>*@
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">Veriler</div>
+                                    <div class="panel-body">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Sıra
+                                                    </th>
+                                                    <th>
+                                                        Saniye
+                                                    </th>
+                                                    <th>
+                                                        App Cpu
+                                                    </th>
+                                                    <th>
+                                                        App Ram
+                                                    </th>
+                                                    <th>
+                                                        Engine Cpu
+                                                    </th>
+                                                    <th>
+                                                        Engine Ram
+                                                    </th>
+                                                    <th>
+                                                        Tarih
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    int Sira = 1;
+                                                    foreach (WSKTS.Performans.PerformansInfo item in Model.SonucListesi)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                @Sira
+                                                            </td>
+                                                            <td>
+                                                                @item.No
+                                                            </td>
+                                                            <td>
+                                                                @item.AppCpu
+                                                            </td>
+                                                            <td>
+                                                                @item.AppRam
+                                                            </td>
+                                                            <td>
+                                                                @item.EngineCpu
+                                                            </td>
+                                                            <td>
+                                                                @item.EngineRam
+                                                            </td>
+                                                            <td>
+                                                                @item.Tarih
+                                                            </td>
+                                                        </tr>
+                                                        Sira++;
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">Grafik</div>
+                                    <div class="panel-body">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">Uygulama / Server Cpu Grafiği</div>
+                                            <div class="panel-body">
+                                                <div id="chartdivcpu" style="height:600px;width:100%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">Uygulama / Server Ram Grafiği</div>
+                                            <div class="panel-body">
+                                                <div id="chartdivram" style="height:600px;width:100%"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/amcharts/amcharts.js"></script>
+    <script src="lib/amcharts/serial.js"></script>
+    <script src="lib/amcharts/themes/light.js"></script>
+    <script type="text/javascript">
+        var chartchartdivcpu = AmCharts.makeChart("chartdivcpu", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 40,
+    "marginLeft": 40,
+    "autoMarginOffset": 20,
+    "dataDateFormat": "YYYY-MM-DD",
+    "valueAxes": [{
+        "id": "v1",
+        "axisAlpha": 0,
+        "position": "left",
+        "ignoreAxisWidth":true
+    },
+    {
+        "id": "v2",
+        "axisAlpha": 0,
+        "position": "left",
+        "ignoreAxisWidth": true
+    }
+    ],
+    "balloon": {
+        "borderThickness": 1,
+        "shadowAlpha": 0
+    },
+    "graphs": [{
+        "id": "g1",
+        "balloon":{
+          "drop":true,
+          "adjustBorderColor":false,
+          "color":"#ffffff"
+        },
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "bulletColor": "#FFFFFF",
+        "bulletSize": 5,
+        "hideBulletsCount": 50,
+        "lineThickness": 2,
+        "title": "App Cpu",
+        "useLineColorForBulletBorder": true,
+        "valueField": "AppCpu",
+        "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+    },
+    {
+        "id": "g2",
+        "balloon": {
+            "drop": true,
+            "adjustBorderColor": false,
+            "color": "#ffffff"
+        },
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "bulletColor": "#FFFFFF",
+        "bulletSize": 5,
+        "hideBulletsCount": 50,
+        "lineThickness": 2,
+        "title": "Engine Cpu",
+        "useLineColorForBulletBorder": true,
+        "valueField": "EngineCpu",
+        "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+    }
+    ],
+    "chartScrollbar": {
+        "graph": "g1",
+        "oppositeAxis":false,
+        "offset":30,
+        "scrollbarHeight": 80,
+        "backgroundAlpha": 0,
+        "selectedBackgroundAlpha": 0.1,
+        "selectedBackgroundColor": "#888888",
+        "graphFillAlpha": 0,
+        "graphLineAlpha": 0.5,
+        "selectedGraphFillAlpha": 0,
+        "selectedGraphLineAlpha": 1,
+        "autoGridCount":true,
+        "color":"#AAAAAA"
+    },
+    "chartCursor": {
+        "pan": true,
+        "valueLineEnabled": true,
+        "valueLineBalloonEnabled": true,
+        "cursorAlpha":1,
+        "cursorColor":"#258cbb",
+        "limitToGraph":"g1",
+        "valueLineAlpha":0.2
+    },
+    "valueScrollbar":{
+      "oppositeAxis":false,
+      "offset":50,
+      "scrollbarHeight":10
+    },
+    "columnWidth": 1,
+    "categoryField": "No",
+    "categoryAxis": {
+        "parseDates": false,
+        "dashLength": 1,
+        "minorGridEnabled": true
+    },
+    "export": {
+        "enabled": true
+    },
+    "dataProvider":[
+   {
+      "No":1,
+      "AppCpu":0.0,
+      "AppRam":30160.0,
+      "EngineCpu":0.0,
+      "EngineRam":5932.0
+   },
+   {
+      "No":2,
+      "AppCpu":3.8045573234558105,
+      "AppRam":31556.0,
+      "EngineCpu":0.0,
+      "EngineRam":5932.0
+   },
+   {
+      "No":3,
+      "AppCpu":3.4510080814361572,
+      "AppRam":31556.0,
+      "EngineCpu":19.900079727172852,
+      "EngineRam":5844.0
+   }
+]
+      });
+        chartchartdivcpu.addListener("rendered", chartchartdivcpuzoomChart);
+        chartchartdivcpuzoomChart();
+        function chartchartdivcpuzoomChart(Nesne) {
+            chartchartdivcpu.zoomToIndexes(chartchartdivcpu.dataProvider.length - 40, chartchartdivcpu.dataProvider.length - 1);
+        }
+
+
+        var chartchartdivram = AmCharts.makeChart("chartdivram", {
+            "type": "serial",
+            "theme": "light",
+            "marginRight": 40,
+            "marginLeft": 40,
+            "autoMarginOffset": 20,
+            "dataDateFormat": "YYYY-MM-DD",
+            "valueAxes": [{
+                "id": "v1",
+                "axisAlpha": 0,
+                "position": "left",
+                "ignoreAxisWidth": true
+            },
+            {
+                "id": "v2",
+                "axisAlpha": 0,
+                "position": "left",
+                "ignoreAxisWidth": true
+            }
+            ],
+            "balloon": {
+                "borderThickness": 1,
+                "shadowAlpha": 0
+            },
+            "graphs": [{
+                "id": "g1",
+                "balloon": {
+                    "drop": true,
+                    "adjustBorderColor": false,
+                    "color": "#ffffff"
+                },
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletColor": "#FFFFFF",
+                "bulletSize": 5,
+                "hideBulletsCount": 50,
+                "lineThickness": 2,
+                "title": "red line",
+                "useLineColorForBulletBorder": true,
+                "valueField": "AppRam",
+                "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+            },
+            {
+                "id": "g2",
+                "balloon": {
+                    "drop": true,
+                    "adjustBorderColor": false,
+                    "color": "#ffffff"
+                },
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletColor": "#FFFFFF",
+                "bulletSize": 5,
+                "hideBulletsCount": 50,
+                "lineThickness": 2,
+                "title": "red line",
+                "useLineColorForBulletBorder": true,
+                "valueField": "EngineRam",
+                "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+            }
+            ],
+            "chartScrollbar": {
+                "graph": "g1",
+                "oppositeAxis": false,
+                "offset": 30,
+                "scrollbarHeight": 80,
+                "backgroundAlpha": 0,
+                "selectedBackgroundAlpha": 0.1,
+                "selectedBackgroundColor": "#888888",
+                "graphFillAlpha": 0,
+                "graphLineAlpha": 0.5,
+                "selectedGraphFillAlpha": 0,
+                "selectedGraphLineAlpha": 1,
+                "autoGridCount": true,
+                "color": "#AAAAAA"
+            },
+            "chartCursor": {
+                "pan": true,
+                "valueLineEnabled": true,
+                "valueLineBalloonEnabled": true,
+                "cursorAlpha": 1,
+                "cursorColor": "#258cbb",
+                "limitToGraph": "g1",
+                "valueLineAlpha": 0.2
+            },
+            "valueScrollbar": {
+                "oppositeAxis": false,
+                "offset": 50,
+                "scrollbarHeight": 10
+            },
+            "columnWidth": 1,
+            "categoryField": "No",
+            "categoryAxis": {
+                "parseDates": false,
+                "dashLength": 1,
+                "minorGridEnabled": true
+            },
+            "export": {
+                "enabled": true
+            },
+            "dataProvider": [
+           {
+               "No": 1,
+               "AppCpu": 0.0,
+               "AppRam": 30160.0,
+               "EngineCpu": 0.0,
+               "EngineRam": 5932.0
+           },
+           {
+               "No": 2,
+               "AppCpu": 3.8045573234558105,
+               "AppRam": 31556.0,
+               "EngineCpu": 0.0,
+               "EngineRam": 5932.0
+           },
+           {
+               "No": 3,
+               "AppCpu": 3.4510080814361572,
+               "AppRam": 31556.0,
+               "EngineCpu": 19.900079727172852,
+               "EngineRam": 5844.0
+           }
+            ]
+        });
+
+        chartchartdivram.addListener("rendered", chartchartdivramzoomChart);
+        chartchartdivramzoomChart();
+        function chartchartdivramzoomChart(Nesne) {
+            chartchartdivram.zoomToIndexes(chartchartdivram.dataProvider.length - 40, chartchartdivram.dataProvider.length - 1);
+        }
+
+
+    </script>
+</body>
+</html>
+
